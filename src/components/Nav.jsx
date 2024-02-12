@@ -1,6 +1,8 @@
+
+
 import NikeLogo from "../assets/nike-logo.svg?react";
 import {RxHamburgerMenu} from "react-icons/rx";
-const Roures = [
+const ROUTES = [
   "Home",
   "About",
   "Services",
@@ -34,6 +36,8 @@ export function Nav() {
         
 
       </div>
+      
+    
     </nav>
   )
 }
