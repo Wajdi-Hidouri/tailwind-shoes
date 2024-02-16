@@ -12,7 +12,7 @@ const ROUTES = [
 export function Nav() {
   const [isMobileMenuShow , setIsMobileMenuShow]=useState(false)
   return (
-    <nav className="flex flex-wrap items-center justify-between">
+    <nav className="z-10 relative flex flex-wrap items-center justify-between">
       {/* Logo */}
       <a href="#">
       <NikeLogo className="h-20 w-20"/>
@@ -26,10 +26,11 @@ export function Nav() {
       } w-full lg:w-auto lg:block`}>
         <ul className="lg:space-x-8 flex flex-col lg:flex-row rounded-lg border border-gray-100 p-4 bg-gray-50 text-lg lg:bg-transparent lg:border-none">
         {ROUTES.map((route, i ) => {
-          return (<li className={`cursor-pointer px-3 py-2 rounded 
+          return (<li className={` lg:hover:text-blue-500 lg:hover:bg-transparent  cursor-pointer px-3 py-2 rounded 
           ${i === 0 
             ? "bg-blue-500 text-white lg:bg-transparent lg:text-blue-500 "
-            : "hover:bg-gray-100"}`}
+            : "hover:bg-gray-100" 
+          } ${(i === 3 || i === 4) && "lg:text-white"}`}
              key={route}>
               {route}
               </li>);
@@ -37,8 +38,8 @@ export function Nav() {
         </ul>
       </div>
       {/* Carte button */}
-      <div className="fixed bottom-4 left-4 lg:static">
-        <div className="flex-center rounded-full bg-white shadow-md h-12 w-12">
+      <div className="fixed bottom-4 left-4 lg:static lg:mr-8">
+        <div className="flex-center cursor-pointer rounded-full bg-white shadow-md h-12 w-12">
           <TbShoppingBag />
         </div>
       </div>
